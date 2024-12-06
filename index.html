@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 
 <!-- //////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////// Word count function ////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////// -->
+<!-- Placeholder for total word count -->
+<p id="totalWordCount"></p>
+<hr>
+<script>
+  // Function to calculate and display word count for a specified section
+  function displayWordCount(sectionId, outputId) {
+    // Get the text content from the specified section
+    const text = document.getElementById(sectionId).textContent;
+    // Split text into words based on spaces and filter out any empty strings
+    const wordArray = text.trim().split(/\s+/);
+    // Count the words
+    const wordCount = wordArray.length;
+    // Return the word count for summing purposes
+    return wordCount;
+  }
+  // Function to calculate and display total word count from selected sections
+  function displayTotalWordCount() {
+    // Calculate word count for each section and accumulate the total
+    const IntroductionCount = displayWordCount("Introduction_InText");
+    const AnalysisCount = displayWordCount("Analysis_InText");
+    // Calculate the sum of all selected sections
+    const totalWordCount = IntroductionCount + AnalysisCount;
+    // Display the total word count
+    document.getElementById("totalWordCount").innerText = `Total word count: ${totalWordCount}`;
+  }
+  // Run the function for specific sections and display total count when the page loads
+  window.onload = displayTotalWordCount;
+</script>
+
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////// Adding last update ////////////////////////////// -->
   <!-- //////////////////////////////////////////////////////////////////////////////// -->
     <!-- Last commit time display -->
@@ -49,10 +81,11 @@
         window.onload = getLastUpdatedTime;
     </script>
 
+
 <html>
 
     <head>
-        <title>AI in E-Commerce</title>
+        <title>ma05570</title>
 
         <meta charset="utf-8"/>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -84,13 +117,15 @@
             }
         </style>
 
+        
+
     </head>
 
 <body>
     <div class="container">
         <h1><u>The Influence of AI in E-Commerce</u></h1>
         
-        <video src="1206.mp4" width="800" height="450" controls></video>
+        <video src="project.mp4" width="800" height="450" controls></video>
         <h3><strong>Abstract</strong></h3>
         <p>The speed at which artificial intelligence is developing is well known. Artificial intelligence can be used in every line of business. E-commerce will be the topic of this article. E-commerce, to put it simply, is the purchasing and selling of goods using the internet. <a href="#references">(Hashemi-Pour & Lutkevich, 2023)</a> </p>
         <p><br></p>
